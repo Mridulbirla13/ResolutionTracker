@@ -29,7 +29,7 @@ export default function LoginPage() {
                 {/* OAuth buttons */}
                 <div className="space-y-3 mb-6">
                     <button
-                        onClick={() => signIn("google", { callbackUrl: "/resolutions" })}
+                        onClick={() => signIn("google", { callbackUrl: "/" })}
                         className="
                           w-full flex items-center justify-center gap-2
                           border border-gray-700 rounded
@@ -40,7 +40,7 @@ export default function LoginPage() {
                     </button>
 
                     <button
-                        onClick={() => signIn("github", { callbackUrl: "/resolutions" })}
+                        onClick={() => signIn("github", { callbackUrl: "/" })}
                         className="
                           w-full flex items-center justify-center gap-2
                           border border-gray-700 rounded
@@ -65,7 +65,7 @@ export default function LoginPage() {
 
                         await signIn("credentials", {
                             email: formData.get("email"),
-                            callbackUrl: "/resolutions",
+                            callbackUrl: "/",
                         })
                     }}
                     className="space-y-4"
