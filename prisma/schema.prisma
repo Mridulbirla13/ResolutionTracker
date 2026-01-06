@@ -1,0 +1,37 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String       @id @default(uuid())
+  email     String       @unique
+  createdAt DateTime     @default(now())
+  resolutions Resolution[]
+}
+
+model Resolution {
+  id        String   @id @default(uuid())
+  title     String
+  createdAt DateTime @default(now())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  progress Progress[]
+}
+
+model Progress {
+  id  String  @id @default(uuid())
+  date  DateTime
+  completed Boolean @default(true)
+
+  resolutionId  String
+  resolution  Resolution  @relation(fields: [resolutionId], references: [id], onDelete: Cascade) 
+
+  @@unique([resolutionId, date])
+}
