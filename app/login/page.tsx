@@ -6,14 +6,14 @@ import { useRouter } from "next/navigation"
 export default function LoginPage() {
     const router = useRouter()
     return (
-        <div className="min-h-screen flex items-center justify-center bg-black text-white px-4">
+        <div className="min-h-screen flex items-center justify-center bg-background text-foreground px-4">
             <div className="relative w-full max-w-sm border border-gray-700 rounded-xl p-6 shadow-lg">
                 <button
                     onClick={() => router.push("/")}
                     aria-label="Close"
                     className="
                       absolute right-5 top-4
-                      text-gray-400 hover:text-white
+                      text-gray-400 hover:text-foreground
                       transition
                     "
                 >
@@ -26,14 +26,13 @@ export default function LoginPage() {
                     Log in to track your resolutions
                 </p>
 
-                {/* OAuth buttons */}
                 <div className="space-y-3 mb-6">
                     <button
                         onClick={() => signIn("google", { callbackUrl: "/" })}
                         className="
                           w-full flex items-center justify-center gap-2
                           border border-gray-700 rounded
-                          py-2 hover:bg-gray-800 transition
+                          py-2 hover:bg-foreground hover:text-background transition
                         "
                     >
                         <span>Continue with Google</span>
@@ -44,14 +43,13 @@ export default function LoginPage() {
                         className="
                           w-full flex items-center justify-center gap-2
                           border border-gray-700 rounded
-                          py-2 hover:bg-gray-800 transition
+                          py-2 hover:bg-foreground hover:text-background transition
                         "
                     >
                         <span>Continue with GitHub</span>
                     </button>
                 </div>
 
-                {/* Divider */}
                 <div className="flex items-center gap-3 mb-6">
                     <div className="flex-1 h-px bg-gray-700" />
                     <span className="text-xs text-gray-500">OR</span>
@@ -76,9 +74,9 @@ export default function LoginPage() {
                         placeholder="Email address"
                         required
                         className="
-                          w-full rounded bg-gray-900 border border-gray-700
-                          px-3 py-2 text-white
-                          placeholder-gray-500
+                          w-full rounded bg-background border border-gray-700
+                          px-3 py-2 text-foreground
+                          placeholder-foreground/50
                           focus:outline-none focus:ring-2 focus:ring-green-500
                         "
                     />

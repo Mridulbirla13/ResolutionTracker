@@ -50,7 +50,7 @@ export default async function ResolutionsPage() {
 
         <div
           className={`${headingFont.className}
-            text-2xl sm:text-4xl
+            text-2xl sm:text-4xl text-foreground 
             font-bold tracking-wide
             whitespace-nowrap
           `}
@@ -62,8 +62,8 @@ export default async function ResolutionsPage() {
           href="/"
           className="
             absolute right-0
-            px-4 py-2 rounded-lg border border-white bg-white text-black
-            font-medium hover:bg-[#0a0a0a] hover:text-white hover:border-gray-50 transition
+            px-4 py-2 rounded-lg border border-foreground bg-background text-foreground
+            font-medium hover:bg-foreground hover:text-background hover:border-foreground/20 transition
             flex items-center justify-center
           "
         >
@@ -123,10 +123,10 @@ export default async function ResolutionsPage() {
         const weeklyHeatmap = yearHeatmap.slice(-7)
 
         return (
-          <div key={r.id} className="border p-4 rounded">
+          <div key={r.id} className="border border-foreground/20 p-4 rounded">
             <div className="flex items-center justify-between">
               <div className="flex w-full items-center justify-between gap-4">
-                <div className="font-semibold truncate">{r.title}</div>
+                <div className="font-semibold text-foreground truncate">{r.title}</div>
 
                 <div className="flex items-center gap-3 shrink-0">
                   <form action={checkIn.bind(null, r.id)}>
@@ -150,7 +150,7 @@ export default async function ResolutionsPage() {
               </div>
             </div>
 
-            <div className="text-sm text-gray-400 mt-2">
+            <div className="text-sm text-foreground/80 mt-2">
               🔥 Streak: {streak} day{streak !== 1 && "s"}
             </div>
 

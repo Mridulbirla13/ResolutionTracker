@@ -35,7 +35,7 @@ export default async function Home() {
       <div className="max-w-4xl mx-auto flex flex-col items-center space-y-10">
 
         <div className="flex w-full items-center justify-between flex-col sm:flex-row gap-4 mb-8">
-          <div className={`${headingFont.className} text-2xl text-white font-bold`}>
+          <div className={`${headingFont.className} text-2xl font-bold`}>
             Resolution Tracker
           </div>
 
@@ -85,8 +85,8 @@ export default async function Home() {
                 <Link
                   href="/resolutions"
                   className="w-full sm:w-auto px-6 py-3 rounded-lg
-                         border border-white bg-white text-black
-                         hover:bg-black hover:text-white transition"
+                         border border-background/20 bg-foreground text-background
+                         hover:bg-background hover:text-foreground hover:border-foreground/20 transition"
                 >
                   Go to Resolutions
                 </Link>
@@ -94,7 +94,8 @@ export default async function Home() {
                 <Link
                   href="/resolutions/new"
                   className="w-full sm:w-auto px-6 py-3 rounded-lg
-                         border border-gray-300 hover:bg-gray-50 hover:text-gray-900 transition"
+                         border border-foreground/20 bg-background text-foreground
+                         hover:bg-foreground hover:text-background transition"
                 >
                   Add Resolution
                 </Link>
@@ -104,7 +105,7 @@ export default async function Home() {
                 <Link
                   href="/login"
                   className="w-full sm:w-auto px-6 py-3 rounded-lg
-                       border border-gray-300 text-lg hover:bg-gray-50 hover:text-gray-900 transition"
+                       border border-gray-300 text-lg hover:bg-foreground hover:text-background transition"
                 >
                   Login
                 </Link>

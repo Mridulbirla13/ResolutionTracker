@@ -13,7 +13,7 @@ export default function ResolutionActions({ id }: { id: string }) {
     <>
       <div className="flex items-center gap-3">
         <Link href={`/resolutions/${id}/edit`}>
-          <Pencil className="w-4 h-4 text-gray-400 hover:text-white cursor-pointer" />
+          <Pencil className="w-4 h-4 text-gray-400 hover:text-foreground cursor-pointer" />
         </Link>
 
         <Trash2

@@ -8,8 +8,9 @@ import { headingFont } from "@/app/layout"
 export default async function EditResolutionPage({
   params,
 }: {
-  params: { id: string }
+  params: Promise <{ id: string }>
 }) {
+  const { id } = await params
   const session = await getServerSession()
   if (!session?.user?.email) redirect("/login")
 
@@ -20,7 +21,7 @@ export default async function EditResolutionPage({
 
   const resolution = await prisma.resolution.findFirst({
     where: {
-      id: params.id,
+      id: id,
       userId: user.id,
     },
   })
@@ -28,7 +29,7 @@ export default async function EditResolutionPage({
   if (!resolution) redirect("/resolutions")
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-black text-white px-4">
+    <main className="min-h-screen flex items-center justify-center bg-background text-foreground px-4">
       <div className="w-full max-w-md border border-gray-700 rounded-xl p-6 space-y-6">
 
         <div className="flex items-center justify-between">
@@ -36,7 +37,7 @@ export default async function EditResolutionPage({
             Edit Resolution
           </h1>
 
-          <Link href="/resolutions" className="text-gray-400 hover:text-white">
+          <Link href="/resolutions" className="text-gray-400 hover:text-foreground transition">
             ✕
           </Link>
         </div>
@@ -50,15 +51,15 @@ export default async function EditResolutionPage({
             defaultValue={resolution.title}
             required
             className="
-              w-full rounded bg-gray-900 border border-gray-700
-              px-3 py-2 text-white
+              w-full rounded bg-background border border-gray-700
+              px-3 py-2 text-foreground/40
               focus:outline-none focus:ring-2 focus:ring-green-500
             "
           />
 
           <button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700 py-2 rounded font-medium"
+            className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded font-medium"
           >
             Save Changes
           </button>
