@@ -22,13 +22,17 @@ export const metadata: Metadata = {
   description: "Track daily progress. Visualize your streaks.",
 };
 
+export const viewport = {
+  themeColor: "#0a0a0a",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

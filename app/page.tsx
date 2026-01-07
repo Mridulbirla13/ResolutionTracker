@@ -94,7 +94,7 @@ export default async function Home() {
                 <Link
                   href="/resolutions/new"
                   className="w-full sm:w-auto px-6 py-3 rounded-lg
-                         border border-gray-300 hover:bg-gray-50 transition"
+                         border border-gray-300 hover:bg-gray-50 hover:text-gray-900 transition"
                 >
                   Add Resolution
                 </Link>
