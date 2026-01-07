@@ -31,7 +31,7 @@ export default function NewResolutionPage() {
                         placeholder="e.g. Workout 5 days a week"
                         className="
                           w-full rounded bg-background border border-gray-700
-                          px-3 py-2 text-white
+                          px-3 py-2 text-foreground
                           placeholder-gray-500
                           focus:outline-none focus:ring-2 focus:ring-green-500
                         "
